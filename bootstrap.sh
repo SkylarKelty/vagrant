@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [ -f /var/.vagrant_lock ]; then
+	exit 0
+fi
+
 debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password rootpass'
 debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password rootpass'
 apt-get update
@@ -18,3 +22,9 @@ update-rc.d memcached enable
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/bin/composer
 composer --version
+
+# Fancy bash
+curl https://raw.github.com/SkylarKelty/bash/master/install.sh | bash
+
+# Run once
+touch /var/.vagrant_lock
