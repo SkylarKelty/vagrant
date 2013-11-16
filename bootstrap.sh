@@ -24,7 +24,7 @@ mv composer.phar /usr/bin/composer
 composer --version
 
 # Fancy bash
-curl https://raw.github.com/SkylarKelty/bash/master/install.sh | bash
+#curl https://raw.github.com/SkylarKelty/bash/master/install.sh | bash
 
 # Run once
 touch /var/.vagrant_lock
