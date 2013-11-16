@@ -15,6 +15,6 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-  config.vm.provision :shell, :path => "bootstrap.sh"
+  config.vm.provision "puppet"
   
 end
