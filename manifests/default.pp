@@ -3,9 +3,9 @@ node 'base-dev' {
 
 	class {
 		'::mysql::server':
-			root_password    => 'AnActualPassword';
-		'phpmyadmin': ;
+			root_password    => 'password';
 		'webserver': ;
+		'phpmyadmin': ;
 	}
 
 	package {
