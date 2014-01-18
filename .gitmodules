@@ -2,3 +2,9 @@
 	path = www/phpMyAdmin
 	url = https://github.com/phpmyadmin/phpmyadmin.git
 	branch = STABLE
+[submodule "modules/mysql"]
+	path = modules/mysql
+	url = https://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
