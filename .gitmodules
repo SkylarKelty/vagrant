@@ -9,5 +9,5 @@
 	path = modules/stdlib
 	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
 [submodule "modules/phpMyAdmin"]
-	path = modules/phpMyAdmin
+	path = modules/phpmyadmin
 	url = https://github.com/SkylarKelty/puppet-phpmyadmin.git
