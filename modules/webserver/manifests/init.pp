@@ -13,12 +13,14 @@ class webserver {
 	}
 
 	file {
+		'/var/www/html':
+			ensure  => directory;
 		'no-default':
-			path    => '/etc/apache2/sites-enabled/000-default',
+			path    => '/etc/apache2/sites-enabled/000-default.conf',
 			ensure  => absent,
 			notify  => Service['apache2'];
 		'www':
-			path    => '/etc/apache2/sites-enabled/vagrant',
+			path    => '/etc/apache2/sites-enabled/vagrant.conf',
          	source  => 'puppet:///modules/webserver/apache2.conf',
 			ensure  => link,
 			notify  => Service['apache2'];
