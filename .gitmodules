@@ -1,0 +1,4 @@
+[submodule "www/phpMyAdmin"]
+	path = www/phpMyAdmin
+	url = https://github.com/phpmyadmin/phpmyadmin.git
+	branch = STABLE
