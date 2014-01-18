@@ -32,7 +32,8 @@ class webserver {
 
 	file {
 		'/var/www/html':
-			ensure  => directory;
+			ensure  => directory,
+			require => Package['apache2'];
 		'no-default':
 			path    => '/etc/apache2/sites-enabled/000-default.conf',
 			ensure  => absent,
@@ -41,6 +42,10 @@ class webserver {
 			path    => '/etc/apache2/sites-enabled/vagrant.conf',
          	source  => 'puppet:///modules/webserver/apache2.conf',
 			ensure  => link,
+			notify  => Service['apache2'];
+		'/etc/php5/apache2/conf.d/10-mcrypt.ini':
+			ensure  => present,
+			source  => 'puppet:///modules/webserver/mcrypt.ini',
 			notify  => Service['apache2'];
 	}
 }
