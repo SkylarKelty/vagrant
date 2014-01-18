@@ -3,8 +3,10 @@
 
 Vagrant.configure("2") do |config|
 
+  config.vm.hostname = "base-dev"
+
   config.vm.box = "precise64"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
+  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-1310-x64-virtualbox-puppet.box"
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
@@ -15,6 +17,8 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-  config.vm.provision "puppet"
+  config.vm.provision "puppet" do |puppet|
+    puppet.module_path = "modules"
+  end
   
 end
