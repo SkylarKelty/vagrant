@@ -35,7 +35,7 @@ node 'base-dev' {
 		'download_composer':
 			command     => '/usr/bin/curl -sSL http://getcomposer.org/installer | /usr/bin/php',
 			cwd         => '/tmp/',
-			require     => Package['curl'],
+			require     => Package['curl', 'php5-json'],
 			creates     => '/tmp/composer.phar';
 	}
 
